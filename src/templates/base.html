@@ -1,0 +1,49 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   	{% include 'meta_tags.html' %}
+   	{% include 'favicons.html' %}
+    <title>Readr</title>
+	{% include 'styles.html' %}
+   	{% include 'shivs.html' %}
+  </head>
+
+  <body>
+    <div class="container">
+		
+      <div class="row row-offcanvas row-offcanvas-left">
+        {% include 'navbar.html' %}
+        {% block content %}
+		{% endblock %}
+      </div><!--/row-->
+		
+      <hr>
+		<div class="jcarousel-wrapper">
+                <div class="jcarousel">
+                    <ul>
+                        <li><img src="{% static 'news_readr/img/img1.jpg' %}" alt="Image 1"></li>
+                        <li><img src="{% static 'news_readr/img/img2.jpg' %}" alt="Image 2"></li>
+                        <li><img src="{% static 'news_readr/img/img3.jpg' %}" alt="Image 3"></li>
+                        <li><img src="{% static 'news_readr/img/img4.jpg' %}" alt="Image 4"></li>
+                        <li><img src="{% static 'news_readr/img/img5.jpg' %}" alt="Image 5"></li>
+                        <li><img src="{% static 'news_readr/img/img6.jpg' %}" alt="Image 6"></li>
+                    </ul>
+                </div>
+
+                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+
+                <p class="jcarousel-pagination"></p>
+            </div>
+            
+      <footer>
+        <p>&copy; Company 2014</p>
+      </footer>
+
+    </div><!--/.container-->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% include 'scripts.html' %}
+  </body>
+</html>
