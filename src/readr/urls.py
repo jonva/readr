@@ -22,7 +22,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'news_readr.views.home', name='home'),
-    url(r'^details/$', 'news_readr.views.details', name='details'),
+    url(r'^details/(?P<article_id>\d+)/$', 'news_readr.views.details', name='details'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
