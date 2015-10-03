@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     #third party apps
     
     #my apps
+    'readr',
     'news_readr',
 )
 

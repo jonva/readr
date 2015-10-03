@@ -13,11 +13,17 @@ class Article(models.Model):
         )
     published_on = models.DateTimeField(blank=True, null=True)
     category = models.CharField(max_length=200, blank=True, null=True)
-    img_primary = models.ImageField(blank=True, null=True)
+    img_primary = models.ImageField(blank=True, null=True, upload_to='img')
     img_secondary = models.ImageField(blank=True, null=True)
+    summary = body = models.TextField(
+        blank=True,
+        null=True,
+        default = "No caption available",
+        )
     body = models.TextField(
         blank=True,
-        null=True
+        null=True,
+        default = "No content available",
         )
     upvotes = models.IntegerField(
         default = 0,
