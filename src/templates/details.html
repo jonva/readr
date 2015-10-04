@@ -1,32 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content%}
-
-<div class="col-xs-12 col-sm-9">
-	<h2 class="row">{{ article.title }}</h2>
-	<h4 class="row">{{article.published_on}} | {{article.author}}</h4>
-	<div class="row">
-		<div class="jumbotron" style="background: url('/media/{{article.img_primary}}')">
-			<p class="pull-left visible-xs">
-				<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-			</p>
-    <h1>{{article.title}}</h1>
-		    <p>{{article.summary}}</p>
-		</div>
-	</div>
-	
-  
-  <article class="row">
-    <div class="col-xs-10 col-xs-offset-1 col-sm-8">
-      <p>{{article.body}}</p>
-    </div><!--/.col-xs-6.col-lg-4-->
-    {% if article.img_secondary %}
-    <div class="col-xs-10 col-xs-offset-1 col-sm-4" style="background-color: black; height: 200px;">
-  		<img src="/media/{{ article.img_secondary }}" style="background-color: black; height: 200px;"/>
+<div id="details-body" class="content-container container-fluid">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="readr-detail jumbotron" style="background-image: url('{{ media_url }}{{ article.img_primary }}');">
+            <div class="jumbo-text-container container">
+            	<div class="details-title-container">
+	                <h5 class="author-name">{{ article.author}} |  {{ article.published_on }}</h5>
+	                <h3 class="title-text">{{ article.title }}</h3>
+               </div>
+            </div>
+        </div>
+        <div class="container list-container">
+            <div class="row">
+                <p class="details-summary">
+                	{{ article.summary}}
+                </p>
+            </div>
+            <div class="row body-container">
+	            	<div class="col-xs-12">
+	            	{% if article.img_secondary %}
+	                    <img class="img_secondary" src="{{ media_url }}{{ article.img_secondary }}">
+	                {% endif %}
+	            	{{article.body}}
+	               </div>
+                </div>
+            </div>
+        </div>
     </div>
-    {% endif %}
-    <!--/.col-xs-6.col-lg-4-->
-  </article><!--/row-->
-</div><!--/.col-xs-12.col-sm-9-->
-
+  </div>  
+    
+    
 {% endblock %}
+
+
+

@@ -1,0 +1,19 @@
+Exception:
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/pip/basecommand.py", line 211, in main
+    status = self.run(options, args)
+  File "/usr/local/lib/python2.7/site-packages/pip/commands/install.py", line 282, in run
+    wheel_cache
+  File "/usr/local/lib/python2.7/site-packages/pip/basecommand.py", line 272, in populate_requirement_set
+    wheel_cache=wheel_cache
+  File "/usr/local/lib/python2.7/site-packages/pip/req/req_install.py", line 213, in from_line
+    wheel_cache=wheel_cache, constraint=constraint)
+  File "/usr/local/lib/python2.7/site-packages/pip/req/req_install.py", line 67, in __init__
+    req = pkg_resources.Requirement.parse(req)
+  File "/usr/local/lib/python2.7/site-packages/pip/_vendor/pkg_resources/__init__.py", line 2980, in parse
+    reqs = list(parse_requirements(s))
+  File "/usr/local/lib/python2.7/site-packages/pip/_vendor/pkg_resources/__init__.py", line 2924, in parse_requirements
+    "version spec")
+  File "/usr/local/lib/python2.7/site-packages/pip/_vendor/pkg_resources/__init__.py", line 2889, in scan_list
+    raise RequirementParseError(msg, line, "at", line[p:])
+RequirementParseError: Expected version spec in gunicornweb: at :

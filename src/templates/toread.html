@@ -1,18 +1,31 @@
-{% load staticfiles %}
-<div class="jcarousel-wrapper">
+{% if toreads %}
+<div class="jcarousel-container container-fluid">
+          <h4 class="row toreadtitle">WHAT TO READ NEXT</h4>
+            <div class=" jcarousel-wrapper">
+
                 <div class="jcarousel">
                     <ul>
-                        <li><img src="{% static 'news_readr/img/img1.jpg' %}" alt="Image 1"></li>
-                        <li><img src="{% static 'news_readr/img/img2.jpg' %}" alt="Image 2"></li>
-                        <li><img src="{% static 'news_readr/img/img3.jpg' %}" alt="Image 3"></li>
-                        <li><img src="{% static 'news_readr/img/img4.jpg' %}" alt="Image 4"></li>
-                        <li><img src="{% static 'news_readr/img/img5.jpg' %}" alt="Image 5"></li>
-                        <li><img src="{% static 'news_readr/img/img6.jpg' %}" alt="Image 6"></li>
+                    	{% for toread in toreads %}
+                        <li style="background-image: url('{{ media_url }}{{ toread.img_primary }}');">
+                            <a href="{% url 'details' toread.id %}">
+	                            <div class="carousel-content col-sm-10 col-xs-12">
+	                                <h5 class="row">
+	                              {{toread.title}}
+	                            </h5>
+	                                <p class="row">
+	                                    {{ toread.summary }}
+	                                </p>
+	                            </div>
+	                          </a>
+                        </li>
+                        {% endfor %} 
                     </ul>
                 </div>
-
                 <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
                 <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-
-                <p class="jcarousel-pagination">&nbsp;</p>
+                <!-- <p class="jcarousel-pagination">&nbsp;</p> -->
             </div>
+        </div>
+{% endif %}
+
+       
