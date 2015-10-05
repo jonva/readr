@@ -31,7 +31,8 @@ def home(request):
 def details(request, article_id = 1):
     try:
         article = Article.objects.get(id=article_id)
+        return render(request, "details.html", {'article': article})
     except Article.DoesNotExist:
         article = Article.objects.order_by('?')[:1]
         print(article[0].title)
-    return render(request, "details.html", {'article': article[0]})
+        return render(request, "details.html", {'article': article[0]})
