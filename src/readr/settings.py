@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #third party apps
-    
+    "compressor",
     #my apps
     'readr',
     'news_readr',

@@ -15,10 +15,10 @@ Including another URLconf
 """
 
 from django.conf import settings
+from news_readr import views
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.views.generic.base import RedirectView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -31,3 +31,5 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns.append(url(r'^.*$', views.RedirectToHome.as_view(), name='redirect_to_home'))

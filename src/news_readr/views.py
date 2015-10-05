@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .models import Article
 from django.template import RequestContext
 from django.core.exceptions import ObjectDoesNotExist
+from django.http import Http404, HttpResponseRedirect
+from django.views.generic.base import RedirectView
+from django.core.urlresolvers import reverse
 
 # Create your views here.
 def home(request):
@@ -36,3 +39,7 @@ def details(request, article_id = 1):
         article = Article.objects.order_by('?')[:1]
         print(article[0].title)
         return render(request, "details.html", {'article': article[0]})
+    
+class RedirectToHome(RedirectView):
+    def get_redirect_url(self, *args, **kwargs):
+        return reverse('home')
