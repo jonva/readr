@@ -135,8 +135,8 @@ html, body{
 .ranking-box{
 	text-align: center;
 }
-.ranking-box>h2{
-	padding-top: 50%;
+.rank-title{
+	padding-right: 20px;
 }
 .ranking-vm{
 	display: inline-block;
@@ -147,6 +147,7 @@ html, body{
 .list-container, .article-container{
 	background-color: rgba(0,0,0,0.3);
 }
+
 
 #details-body .details-summary{
 	padding-left: 15px;
@@ -334,3 +335,18 @@ div.carousel-content > p{
 
 
 /*End jQcarousel*/
+
+/*
+	Footer styles
+*/
+footer{
+	background-color: rgba(0,0,0,0.8);
+    height: 50px;
+    padding: 5px;
+    line-height: 45px;
+    font-weight: lighter;
+}
+footer > div > a{
+	color: rgba(256, 256, 256, 0.6);
+	padding: 0px 5px;
+}

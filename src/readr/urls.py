@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'news_readr.views.home', name='home'),
     url(r'^details/(?P<article_id>[0-9]+)$', 'news_readr.views.details', name='details'),
-    url(r'^details/$', 'news_readr.views.details', name='details'),
+    url(r'^details/', 'news_readr.views.home', name='home'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

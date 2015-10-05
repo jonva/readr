@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Article
 from django.template import RequestContext
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 def home(request):
@@ -27,6 +28,9 @@ def home(request):
                }
     return render(request, "home.html", context)
 
-def details(request, article_id='1'):
-    article = Article.objects.get(id=article_id)
+def details(request, article_id = 1):
+    try:
+        article = Article.objects.get(id=article_id)
+    except Article.DoesNotExist:
+        article = Article.objects.order_by('?')[:1]
     return render(request, "details.html", {'article': article})

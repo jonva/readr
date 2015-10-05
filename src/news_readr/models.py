@@ -4,17 +4,19 @@ class Article(models.Model):
     title = models.CharField(
         max_length=300,
         blank=False, 
-        null=True
+        null=True,
+        default = "No title available",
         )
     author = models.CharField(
         max_length=300,
         blank=True, 
-        null=True
+        null=True,
+        default = "Anonymous Author",
         )
     published_on = models.DateTimeField(blank=True, null=True)
     category = models.CharField(max_length=200, blank=True, null=True)
-    img_primary = models.ImageField(blank=True, null=True, upload_to='img')
-    img_secondary = models.ImageField(blank=True, null=True)
+    img_primary = models.ImageField(blank=True, null=True, upload_to='img', default='../static/news_readr/img/404.jpg')
+    img_secondary = models.ImageField(blank=True, null=True, default='../static/news_readr/img/404.jpg')
     summary = body = models.TextField(
         blank=True,
         null=True,
