@@ -16,7 +16,7 @@ class Article(models.Model):
     published_on = models.DateTimeField(blank=True, null=True)
     category = models.CharField(max_length=200, blank=True, null=True)
     img_primary = models.ImageField(blank=True, null=True, upload_to='img', default='../static/news_readr/img/404.jpg')
-    img_secondary = models.ImageField(blank=True, null=True, default='../static/news_readr/img/404.jpg')
+    img_secondary = models.ImageField(blank=True, null=True, upload_to='img_secondary')
     summary = body = models.TextField(
         blank=True,
         null=True,
