@@ -18,13 +18,15 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'news_readr.views.home', name='home'),
     url(r'^details/(?P<article_id>[0-9]+)$', 'news_readr.views.details', name='details'),
-    url(r'^details/', 'news_readr.views.home', name='home'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    url(r'^details/$', 'news_readr.views.details', name='details'),
+]
+    
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
