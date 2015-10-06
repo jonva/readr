@@ -7,6 +7,7 @@ h1, h2, h3, h4, h5, p, pre, div, article, span {
 }
 html, body{
 	background-color: rgba(30,30,47, 0.7);
+	-webkit-overflow-scrolling: touch;
 }
 .header-nav {
     background: #000000;
@@ -56,7 +57,7 @@ html, body{
 
 .readr-detail.jumbotron, .readr-featured.jumbotron{
 	border-radius: 0px;
-	background-size: 100%;
+	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	min-width: 300px;
@@ -64,9 +65,7 @@ html, body{
 	margin-bottom: 0px;
 	  -webkit-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out;
-}
-.readr-featured.jumbotron:hover, .readr-detail.jumbotron:hover{
-	background-size: 110%;
+          -webkit-transform: translateZ(0);
 }
 
 .jumbotron > .container{
@@ -190,6 +189,18 @@ html, body{
     }
 }
 
+@media (min-width: 768px) {
+    .readr-logo {
+        margin: 0px !important;
+    }
+ .readr-detail.jumbotron, .readr-featured.jumbotron{
+	background-size: 100%;
+}
+.readr-featured.jumbotron:hover, .readr-detail.jumbotron:hover{
+	background-size: 110%;
+}
+
+}
 
 
 /*jCarousel*/
@@ -321,9 +332,9 @@ div.carousel-content > p{
     position: absolute;
     bottom: -40px;
     left: 50%;
-    -webkit-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
+    -webkit-transform: translate3d(0, -50%, 0);
+    -ms-transform: translate3d(0,-50%, 0);
+    transform: translate3d(0,-50%, 0);
     margin: 0;
 }
 
