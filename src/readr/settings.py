@@ -37,13 +37,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #third party apps
-    "compressor",
     "storages",
     #my apps
     'readr',
     'news_readr',
     
 )
+
 
 #ASW Headers for static files
 AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires

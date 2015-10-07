@@ -164,7 +164,7 @@ html, body{
 }
 
 #details-body .body-container{
-	font-weight: 200;
+	font-weight: 300;
 	text-align: justify;
 }
 #details-body .secondary-image {
@@ -242,8 +242,14 @@ html, body{
         background-repeat: no-repeat;
         background-position: center;
         position: relative;
- -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
+        -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0,0, 0);
+    transform: translate3d(0,0, 0);
+    
+ -webkit-transition: -webkit-transform all 0.3s ease-in-out;
+ -moz-transition: -moz-transform all 0.3s ease-in-out;
+          transition: -webkit-transform all 0.3s ease-in-out;
+          
           -moz-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
          -o-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
          -webkit-filter: grayscale(60%);
